@@ -1,5 +1,5 @@
 # Minimake - A minimalist C++ build system
-This is a minimalistic and simple to use C++ build system which I've made while learning C++, to suit my own needs. 
+This is a minimalistic and simple to use C++ build tool which I've made while learning C++, to suit my own needs. 
 
 ✨**FEATURES**
 - ⚙️ Compile a project, consisting of multiple code files into a single executable
