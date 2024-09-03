@@ -2,15 +2,16 @@
 
 #include <iostream>
 #include <fstream>
-#include "help.h"
+#include <filesystem>
 #include "misc.h"
 
 void init();
 int compile();
 int autosearch();
 
-int main(int argc, char* argv[]) {
+namespace fs = std::filesystem;
 
+int main(int argc, char* argv[]) {
     // Argument interpretation
     if (argc < 2) {
         std::cerr << "Missing arguments!\n";
@@ -33,7 +34,7 @@ int main(int argc, char* argv[]) {
                 return 1;
             }
         } else if (std::string(argv[1]) == "--version" or std::string(argv[1]) == "-v") {
-            std::cout << "MiniMake 1.0\n";
+            std::cout << "MiniMake " << VERSION <<"\n";
         }
     }
 

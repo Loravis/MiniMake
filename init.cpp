@@ -1,11 +1,14 @@
 #include <iostream>
 #include <fstream>
 #include <filesystem>
+#include "misc.h"
 
 namespace fs = std::filesystem;
 
 // minimake init functionality
 void init() {
+    std::string programPathString = "";
+
     fs::path configPath{std::string(fs::current_path()) + "/minimake.conf"};
     fs::path mainPath{std::string(fs::current_path()) + "/main.cpp"};
 
@@ -20,7 +23,7 @@ void init() {
     else {
         std::ofstream file(configPath);
 
-        std::ifstream templateFile("minimake.template.conf");
+        std::ifstream templateFile(programPathString + "/minimake.template.conf");
         std::string templateContent;
         std::string line;
 
@@ -40,8 +43,8 @@ void init() {
     // Create main.cpp if it doesn't exist yet
     else {
         std::ofstream file(mainPath);
-
-        std::ifstream templateFile("main.template.cpp");
+        
+        std::ifstream templateFile(programPathString + "/main.template.cpp");
         std::string templateContent;
         std::string line;
 
