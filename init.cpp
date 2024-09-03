@@ -7,8 +7,6 @@ namespace fs = std::filesystem;
 
 // minimake init functionality
 void init() {
-    std::string programPathString = "";
-
     fs::path configPath{std::string(fs::current_path()) + "/minimake.conf"};
     fs::path mainPath{std::string(fs::current_path()) + "/main.cpp"};
 
@@ -23,15 +21,7 @@ void init() {
     else {
         std::ofstream file(configPath);
 
-        std::ifstream templateFile(programPathString + "/minimake.template.conf");
-        std::string templateContent;
-        std::string line;
-
-        while (std::getline(templateFile, line)) {
-            templateContent.append(line + "\n");
-        }
-
-        file << templateContent;
+        file << CONFIG_TEMPLATE;
         std::cout << "Created config file.\n";
     }
 
@@ -43,17 +33,11 @@ void init() {
     // Create main.cpp if it doesn't exist yet
     else {
         std::ofstream file(mainPath);
-        
-        std::ifstream templateFile(programPathString + "/main.template.cpp");
-        std::string templateContent;
-        std::string line;
 
-        while (std::getline(templateFile, line)) {
-            templateContent.append(line + "\n");
-        }
-
-        file << templateContent;
+        file << MAIN_TEMPLATE;
         std::cout << "Created main code file.\n";
+
+        file.close();
     }
 
     std::cout << "Initialization finished!\n";
