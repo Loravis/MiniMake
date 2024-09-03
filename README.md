@@ -25,5 +25,6 @@ Currently, minimake is only officially supported on Linux systems. However, you 
 **Linux installation:**
 ```bash
 git clone https://github.com/Loravis/MiniMake
+cd ./Minimake
 ./install.sh
 ```
