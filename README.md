@@ -20,7 +20,7 @@ minimake build # Compile your project
 ```
 
 ## Installation
-Currently, minimake is only officially supported on Linux systems. However, you can likely get it working on MacOS and Windows as well.
+Currently, minimake is only officially supported on Linux systems.
 
 **Linux installation:**
 ```bash
